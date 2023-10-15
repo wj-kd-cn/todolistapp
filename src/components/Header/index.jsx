@@ -1,10 +1,8 @@
 import React, { Component } from 'react'
 
-type Props = {}
 
-type State = {}
 
-export default class Header extends Component<Props, State> {
+export default class Header extends Component {
   state = {}
 
   render() {
