@@ -11,7 +11,7 @@ export default class App extends Component {
   state = {todos:[
     {sid:'001',sname:'吃饭',sdone:true},
     {sid:'002',sname:'睡觉',sdone:true},
-    {sid:'003',sname:'编码',sdone:true},
+    {sid:'003',sname:'编码',sdone:false},
   ]}
 
 
