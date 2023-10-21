@@ -3,16 +3,16 @@ import './index.css'
 
 
 export default class Item extends Component {
-  state = {}
 
   render() {
+    console.log(this);
     return (
-      <li>
+    <li>
       <label>
         <input type="checkbox" />
         <span>xxxxxx</span>
-        <button className="btn btn-danger" style={{display:'none'}}>删除</button>
       </label>
+      <button className="btn btn-danger" >删除</button>
     </li>
     )
   }

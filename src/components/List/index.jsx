@@ -13,8 +13,6 @@ export default class List extends Component {
       <Item />
       <Item />
       <Item />
-      <Item />
-      <Item />
     </ul>
     )
   }
