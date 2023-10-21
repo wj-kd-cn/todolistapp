@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { nanoid } from 'nanoid'
 import Footer from './components/Footer'
 import Header from './components/Header'
 import List from './components/List'
@@ -14,6 +15,13 @@ export default class App extends Component {
     {sid:'003',sname:'编码',sdone:false},
   ]}
 
+  addTodo = (todo) =>{
+    console.log('@nanoid: ',nanoid);
+
+
+  } 
+  
+
 
   render() {
     console.log('@app: ',this);
@@ -21,7 +29,7 @@ export default class App extends Component {
     return (
       <div className="todo-container">
         <div className="todo-wrap">
-          <Header />
+          <Header addTodo={this.addTodo}/>
           <List todos={todos}/>
           <Footer />
         </div>
