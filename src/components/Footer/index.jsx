@@ -3,9 +3,10 @@ import './index.css'
 
 
 export default class Footer extends Component {
-  state = {}
+
 
   render() {
+    console.log('@footer: ', this);
     return (
     <div className="todo-footer">
       <label> 

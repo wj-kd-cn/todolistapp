@@ -5,12 +5,13 @@ import './index.css'
 export default class Item extends Component {
 
   render() {
-    console.log(this);
+    console.log('@item: ',this);
+    const {sname} = this.props
     return (
     <li>
       <label>
         <input type="checkbox" />
-        <span>xxxxxx</span>
+        <span>{sname}</span>
       </label>
       <button className="btn btn-danger" >删除</button>
     </li>
