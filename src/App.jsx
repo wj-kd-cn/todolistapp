@@ -10,17 +10,20 @@ export default class App extends Component {
 
   //设定初始化todo的选择项
   state = {todos:[
-    {sid:'001',sname:'吃饭',sdone:true},
-    {sid:'002',sname:'睡觉',sdone:true},
-    {sid:'003',sname:'编码',sdone:false},
+    {sid:nanoid(),sname:'吃饭',sdone:true},
+    {sid:nanoid(),sname:'睡觉',sdone:true},
+    {sid:nanoid(),sname:'编码',sdone:false},
   ]}
 
+
+
   addTodo = (todo) =>{
-    console.log('@nanoid: ',nanoid);
-
-
+    //console.log('@addTodo: ',todo);
+    const {todos} = this.state
+    const newTodos = [todo,...todos]
+    this.setState({todos:newTodos})
   } 
-  
+
 
 
   render() {
@@ -29,9 +32,10 @@ export default class App extends Component {
     return (
       <div className="todo-container">
         <div className="todo-wrap">
+          {/* 子组件向父组件传递数据，可调用父组件的一个函数 */}
           <Header addTodo={this.addTodo}/>
           <List todos={todos}/>
-          <Footer />
+          <Footer todos={todos}/>
         </div>
   
   

@@ -4,7 +4,12 @@ import './index.css'
 
 export default class Footer extends Component {
 
-
+  checkTodos = () =>{
+    const {todos} = this.props
+    const length = todos.lenth
+    console.log('@length',length)
+    
+  }
   render() {
     console.log('@footer: ', this);
     return (
