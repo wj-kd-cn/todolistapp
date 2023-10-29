@@ -9,12 +9,12 @@ export default class List extends Component {
   
   render() {
     console.log('@list: ',this);
-    const {todos} = this.props
+    const {todos,updateTodo} = this.props
     return (
     <ul className="todo-main">
       {
         todos.map( a =>{
-          return <Item key={a.sid} sid={a.sid} sname={a.sname} sdone={a.sdone} />
+          return <Item key={a.sid} sid={a.sid} sname={a.sname} sdone={a.sdone} updateTodo={updateTodo}/>
         })
       }
 

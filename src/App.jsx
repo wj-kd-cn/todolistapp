@@ -15,6 +15,8 @@ export default class App extends Component {
     {sid:nanoid(),sname:'编码',sdone:false},
   ]}
 
+  //状态在哪里，操作状态的函数就在哪里
+
 
 
   addTodo = (todo) =>{
@@ -23,6 +25,17 @@ export default class App extends Component {
     const newTodos = [todo,...todos]
     this.setState({todos:newTodos})
   } 
+
+  updateTodo = (sid,sdone) => {
+    const {todos} = this.state
+    const newtodos = todos.map((todo) =>{
+      if(todo.sid === sid) return {...todo,sdone}
+      else return todo
+    })
+
+    this.setState({todos:newtodos})
+
+  }
 
 
 
@@ -34,7 +47,7 @@ export default class App extends Component {
         <div className="todo-wrap">
           {/* 子组件向父组件传递数据，可调用父组件的一个函数 */}
           <Header addTodo={this.addTodo}/>
-          <List todos={todos}/>
+          <List todos={todos} updateTodo={this.updateTodo}/>
           <Footer todos={todos}/>
         </div>
   
