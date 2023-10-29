@@ -24,7 +24,8 @@ export default class Item extends Component {
         <input type="checkbox" defaultChecked={sdone} />
         <span>{sname}</span>
       </label>
-      <button className="btn btn-danger" style={{display:'none'}}>删除</button>
+      {/* 增加删除按钮的鼠标滑动显示*/}
+      <button className="btn btn-danger" style={{display:mouse ? 'block':'none'}}>删除</button>
     </li>
     )
   }
