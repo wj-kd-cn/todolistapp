@@ -6,6 +6,8 @@ export default class Item extends Component {
 
   state = {mouse:false}
 
+  //在指定事件回调的时候，传入参数，则返回必须是个函数
+
   handleMouse =(falg) =>{
     return () =>{
       this.setState({mouse:falg})
@@ -22,7 +24,7 @@ export default class Item extends Component {
         <input type="checkbox" defaultChecked={sdone} />
         <span>{sname}</span>
       </label>
-      <button className="btn btn-danger" >删除</button>
+      <button className="btn btn-danger" style={{display:'none'}}>删除</button>
     </li>
     )
   }
