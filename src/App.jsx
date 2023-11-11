@@ -43,6 +43,20 @@ export default class App extends Component {
 
   }
 
+  deleteTodo = (sid) => {
+   
+      const {todos} = this.state
+      const newtodos = todos.filter((todo) =>{
+        return todo.sid !== sid
+      
+      })
+
+
+
+    this.setState({todos:newtodos})
+
+  }
+
 
 
   render() {
@@ -53,7 +67,7 @@ export default class App extends Component {
         <div className="todo-wrap">
           {/* 子组件向父组件传递数据，可调用父组件的一个函数 */}
           <Header addTodo={this.addTodo}/>
-          <List todos={todos} updateTodo={this.updateTodo}/>
+          <List todos={todos} updateTodo={this.updateTodo} deleteTodo={this.deleteTodo}/>
           <Footer todos={todos}/>
         </div>
   
