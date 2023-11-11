@@ -4,6 +4,7 @@ import './index.css'
 
 export default class Item extends Component {
 
+  //初始化mouse状态的值
   state = {mouse:false}
 
   //在指定事件回调的时候，传入参数，则返回必须是个函数

@@ -1,11 +1,17 @@
 import React, { Component } from 'react'
 import { nanoid } from 'nanoid'
+import PropTypes from 'prop-types'
 import Footer from './components/Footer'
 import Header from './components/Header'
 import List from './components/List'
 import './App.css';
 
 export default class App extends Component {
+
+    //对接收的props进行：类型，必要性的限制
+    static propTypes = {
+      addTodo:PropTypes.func.isRequired
+    }
 
 
   //设定初始化todo的选择项

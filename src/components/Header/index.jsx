@@ -1,9 +1,15 @@
 import React, { Component } from 'react'
 import { nanoid } from 'nanoid'
+import PropTypes from 'prop-types'
 import './index.css'
 //第三方库引入优先import，自己的库稍后import,css最后import
 
 export default class Header extends Component {
+
+  //对接收的props进行：类型，必要性的限制
+  static propTypes = {
+    addTodo:PropTypes.func.isRequired
+  }
 
   handKeyUp = (event)=>{
     //解构赋值获取keycode,target
